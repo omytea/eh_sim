@@ -1,0 +1,21 @@
+{% load flot_tags %}
+<html lang="en">
+<head>
+  <script type="text/javascript" src='static/js/jquery.js'></script>
+  <script type="text/javascript" src='static/js/jquery.flot.js'></script>
+
+  <title>Just a little bit plot test</title>
+</head>
+<body>
+    <h1>My helpful timestamp site</h1>
+    <hr/>
+    {% plot gr1 graph1 style="width:900px;height:200px" %}
+    <hr/>
+    {% plot gr2 graph2 style="width:900px;height:200px" %}
+    <hr/>
+    {% block footer %}
+    <hr>
+    <p>Thanks for visiting my site.</p>
+    {% endblock %}
+</body>
+</html>
