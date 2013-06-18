@@ -1,0 +1,40 @@
+<html lang="en">
+<head>
+  <script type="text/javascript" src='static/js/jquery.js'></script>
+  <script type="text/javascript" src='static/js/jquery.flot.js'></script>
+  <script type='text/javascript'>
+    $(function() {
+      var data = {{ my_graph.json_data|safe }};
+      var options = {{ my_graph.options|safe }};
+      var plot = $.plot("#gr", data, options);
+
+      function data_update() {
+        $.ajax({
+            url: "{%url 'ajax_get_json'%}",
+            type: "GET",
+            dataType: "json",
+            success: function (series) {
+              plot.setData(series);
+              plot.draw();
+            },
+            error: function (xhr, ajaxOptions, thrownError){
+                alert(xhr.status);
+                alert(thrownError);
+            } 
+        });
+      setTimeout(data_update, 1000);
+      }
+      data_update();
+    });
+  </script>
+
+  <title>Just a little bit plot test</title>
+</head>
+<body>
+    <h1>My helpful timestamp site</h1>
+    <hr>
+    <div id="gr" style="width:600px;height:300px;"></div>
+    <hr>
+    <p>Thanks for visiting my site.</p>
+</body>
+</html>

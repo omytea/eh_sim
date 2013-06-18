@@ -1,6 +1,5 @@
-import os.path
-
-# Django settings for mysite project.
+# Django settings for ajaxTest project.
+import os
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -86,7 +85,7 @@ STATICFILES_FINDERS = (
 )
 
 # Make this unique, and don't share it with anybody.
-SECRET_KEY = '7o3v_@3mpxm*hs#o&#wn38mlkipvumuq)6qh8dr$$=-m+)*osn'
+SECRET_KEY = '!%5)4!u-c$^2w#e2fm$q77a_kcpbs$c_n(4&v1re-4d+%nhn18'
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
@@ -105,10 +104,10 @@ MIDDLEWARE_CLASSES = (
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-ROOT_URLCONF = 'mysite.urls'
+ROOT_URLCONF = 'ajaxTest.urls'
 
 # Python dotted path to the WSGI application used by Django's runserver.
-WSGI_APPLICATION = 'mysite.wsgi.application'
+WSGI_APPLICATION = 'ajaxTest.wsgi.application'
 
 TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
